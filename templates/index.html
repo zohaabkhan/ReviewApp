@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+body {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.flip-box {
+  background-color: transparent;
+  width: 300px;
+  height: 200px;
+  border: 1px;
+  border-radius: 8px;
+  perspective: 1000px;
+}
+
+.flip-box-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  transition: transform 0.8s;
+  transform-style: preserve-3d;
+}
+
+.flip-box:hover .flip-box-inner {
+  transform: rotateY(180deg);
+}
+
+.flip-box-front, .flip-box-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  border-radius: 8px;
+}
+
+.flip-box-front {
+  background-color: #bbb;
+  color: black;
+}
+
+.flip-box-back {
+  background-color: #555;
+  color: white;
+  transform: rotateY(180deg);
+}
+
+img {
+  border-radius: 8px;
+}
+</style>
+</head>
+<body>
+
+
+  
+  <div class="flip-box" class="row">
+    <div class="flip-box-inner" class="column">
+      <div class="flip-box-front">
+        <img src="https://cdn.discordapp.com/attachments/956994335897960563/958086609591492730/landingPage_Postgresql_image.png" alt="HTML" style="width:300px;height:200px">
+      </div>
+      <div class="flip-box-back">
+        <h2>HTML</h2>
+        <p>Open source object-relational database that can be implemented in Python using SQLAlchemy.</p>
+      </div>
+    </div>
+  </div>
+  
+    
+  <img src = "https://cdn.discordapp.com/attachments/956994335897960563/958089567758602300/TheReviewApp_center_image.png"
+  width = "800"
+  height = "400"/>
+  <a href ="signUp">Click here SignUp</a>
+  <a href ="login">Click here to go to Login Page</a>
+
+
+  <div class="flip-box">
+    <div class="flip-box-inner" class="column">
+        <div class="flip-box-front">
+            <img src="https://cdn.discordapp.com/attachments/956994335897960563/958086609130106910/landingPage_Github_image.png" alt="HTML" style="width:300px;height:200px">
+        </div>
+        <div class="flip-box-back">
+            <h2>GITHUB</h2>
+            <p>An advanced development platform used to:<br>- collaborate<br>- automate your workflow<br>- implement Continuous Integration<br>- store public / private repositories</p>
+        </div>
+    </div>
+</div>
+
+
+
+
+</body>
+</html>
