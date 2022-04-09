@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<style>
+    body {
+        background-color: #435165;
+        margin: 0;
+    }
+    
+    .loat-left submit-button {
+        background-color: green;
+        color: white;
+        padding: 14px 20px;
+        margin: 8px 0;
+        border: none;
+        cursor: pointer;
+        width: 100%;
+    }
+    
+    details:hover {
+        text-shadow: 1cm;
+        opacity: 0.8;
+        color: rgb(231, 205, 205);
+        cursor: pointer;
+    }
+</style>
+
+<body>
+
+    <h1>Summarizing the EIR APP</h1>
+
+    <details>
+        <summary>Review</summary>
+        <p>We aim to deliver a CSC4350 Review app accessible from the browser. The Review app will be a study aid for the user to view lecture material covered in the CSC4350 Spring 2022 course. The Review app will provide a login feature, which enables
+            the tracking of a users grades on quizzes as well as view their progression in the course. Upon completion of each lecture video, the user will be presented with a quiz to test their knowledge. The user will also have access to a library containing
+            the source code from the lectures.</p>
+    </details>
+
+    <details>
+        <summary>Motivation</summary>
+        <p>If this class were to have a final exam, we wanted to make an application that would help students be prepared for success! Our Review app serves as a supplement to the main content of the course and enables the user to study the lectures at their
+            own pace and have assigned questions that the user will need to answer correctly in order to move on to another lecture video. We believe this approach will reinforce the materials covered in the course and allow the user to gauge their preparedness
+            for a final exam.</p>
+    </details>
+
+    <details>
+        <summary>Technical Approach</summary>
+        <p>We willl be building a web app using Flask in the backend and HTML/CSS/JS in the frontend. The app will feature login functionality via postgresql database within Heroku. In addition, the lecture videos and source code will also be accessible
+            via the postgresql database, and will be deployed on Heroku.</p>
+    </details>
+
+    <button id="myButton" class="float-left submit-button">Home</button>
+
+
+</body>
+
+<script type="text/javascript">
+    document.getElementById("myButton").onclick = function() {
+        location.href = "clone.html";
+    };
+</script>
+
+</html>
