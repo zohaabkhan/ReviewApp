@@ -1,27 +1,18 @@
-#pylint: disable=invalid-name
-#pylint: disable=missing-final-newline
-#pylint: disable=line-too-long
-#pylint: disable=unpacking-non-sequence
-#pylint: disable=superfluous-parens
-#pylint: disable=trailing-whitespace
-#pylint: disable=wrong-import-order
-#pylint: disable=unused-import
-import os
 import flask
-import requests
-from flask import flash, redirect, url_for
+import os
 from flask_sqlalchemy import SQLAlchemy
-from flask import request
-
 from dotenv import find_dotenv, load_dotenv
-
-
 
 load_dotenv(find_dotenv())
 
-
 app = flask.Flask(__name__)
-secret_key=os.getenv("SECRET_KEY")
-app.secret_key = secret_key
+# Point SQLAlchemy to your Heroku database
+db_url = os.getenv("DATABASE_URL")
+if db_url.startswith("postgres://"):
+    db_url = db_url.replace("postgres://", "postgresql://", 1)
+app.config["SQLALCHEMY_DATABASE_URI"] = db_url
+# Gets rid of a warning
+app.config["SQLALCHEMY_TRACK_MODIFICATIONS"] = False
+app.secret_key = os.getenv("SECRET_KEY")
 
-    
+db = SQLAlchemy(app)
