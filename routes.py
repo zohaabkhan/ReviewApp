@@ -81,7 +81,7 @@ def login_post():
         return flask.jsonify({"status": 401, "reason": "Username or Password Error"})
 
 
-@app.route("/")
+@app.route("/landing")
 def landing():
     """
     doc string: landing page navigation
