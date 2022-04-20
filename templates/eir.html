@@ -1,0 +1,42 @@
+<html>
+<style>
+    body {
+        width: 100px;
+        height: 100px;
+        background-image: url('about_eir.jpeg');
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: 750px 850px;
+        background-color: rgb(64, 87, 187);
+    }
+    
+    .loat-left submit-button {
+        background-color: green;
+        color: white;
+        padding: 14px 20px;
+        margin: 8px 0;
+        border: none;
+        cursor: pointer;
+        width: 100%;
+    }
+    
+    details:hover {
+        text-shadow: 1cm;
+        opacity: 0.8;
+        color: rgb(231, 205, 205);
+        cursor: pointer;
+    }
+</style>
+
+<body>
+    <button id="myButton" class="float-left submit-button">Back</button>
+</body>
+
+<script type="text/javascript">
+    document.getElementById("myButton").onclick = function() {
+        location.href = "Landing.html";
+    };
+</script>
+
+
+</html>
