@@ -10,6 +10,7 @@
 
 
 
+from requests import session
 from app import app, db
 import random
 import os
@@ -26,11 +27,11 @@ login_manager.init_app(app)
 
 
 @login_manager.user_loader
-def load_user(user_name):
+def load_user(id):
     """
     function to handle user login 
     """    
-    return User.query.get(user_name)
+    return User.query.get(int(id))
 
 
 @app.route("/signup")
@@ -47,11 +48,16 @@ def signup_post():
     doc string: user sign up routing
     """
     username = flask.request.form.get("username")
+    email = flask.request.form.get("email")
+    password = flask.request.form.get("password")
+    fullname = flask.request.form.get("password")
+    
     user = User.query.filter_by(username=username).first()
     if user:
         pass
     else:
-        user = User(username=username)
+        user = User(username=username, email=email)
+        user.set_password(password)
         db.session.add(user)
         db.session.commit()
 
@@ -72,7 +78,9 @@ def login_post():
     doc string: login navigation
     """
     username = flask.request.form.get("username")
+    password = flask.request.form['password']
     user = User.query.filter_by(username=username).first()
+    
     if user:
         login_user(user)
         return flask.redirect(flask.url_for("index"))
@@ -108,7 +116,14 @@ def index():
     """
     return flask.render_template(
         "index.html",
-    )    
+    )
+
+@app.route("/summary")
+def summary():
+    """
+    doc string: user login
+    """
+    return flask.render_template("summary.html")    
 
 
 if __name__ == "__main__":
