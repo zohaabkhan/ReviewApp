@@ -33,6 +33,14 @@ def load_user(id):
     """    
     return User.query.get(int(id))
 
+@app.route("/")
+def main():
+    """
+    function to bring users to the Landing page
+    before the login page
+
+    """
+    return flask.render_template("Landing.html")
 
 @app.route("/signup")
 def signup():
@@ -56,7 +64,7 @@ def signup_post():
     if user:
         pass
     else:
-        user = User(username=username, email=email)
+        user = User(username=username, email=email, fullname=fullname)
         user.set_password(password)
         db.session.add(user)
         db.session.commit()
@@ -105,7 +113,7 @@ def logout():
     doc string: user logout naviagtion
     """
     logout_user()
-    return flask.redirect("login")
+    return flask.redirect("/")
 
 
 @app.route("/index")
@@ -121,10 +129,23 @@ def index():
 @app.route("/summary")
 def summary():
     """
-    doc string: user login
+    doc string: summary
     """
     return flask.render_template("summary.html")    
 
+@app.route("/videos")
+def videos():
+    """
+    doc string: Videos
+    """
+    return flask.render_template("videos.html")  
+
+@app.route("/eir")
+def eir():
+    """
+    function to handle user EIR
+    """
+    return flask.render_template("eir.html")
 
 if __name__ == "__main__":
     app.run(
