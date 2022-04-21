@@ -4,6 +4,5 @@ python-dotenv
 Flask-SQLAlchemy
 flask-login
 psycopg2-binary
-werkzeug.security
 lib2to3.pgen2.tokenize
 enum
