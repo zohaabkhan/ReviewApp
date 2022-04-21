@@ -2,13 +2,13 @@
 
 <head>
 </head>
-<link rel="stylesheet" href="landing.css">
+<link rel="stylesheet" href="{{ url_for('static', filename='landing.css') }}">
 
 <body>
     <div class="flip-box" id="github">
         <div class="flip-box-inner">
             <div class="flip-box-front">
-                <img src="github.jpeg" id="github" width="100" class="img-responsive img-rounded">
+                <img src="{{ url_for('static', filename='github.jpeg') }}" id="github" width="100" class="img-responsive img-rounded">
             </div>
             <div class="flip-box-back">
                 <h2>Github</h2>
@@ -25,7 +25,7 @@
     <div class="flip-box" id="css">
         <div class="flip-box-inner">
             <div class="flip-box-front">
-                <img src="css.jpeg" id="css" width="100" class="img-responsive img-rounded">
+                <img src="{{ url_for('static', filename='css.jpeg') }}" id="css" width="100" class="img-responsive img-rounded">
             </div>
             <div class="flip-box-back">
                 <h2>CSS</h2>
@@ -40,7 +40,7 @@
     <div class="flip-box" id="html">
         <div class="flip-box-inner">
             <div class="flip-box-front">
-                <img src="html.jpeg" id="html" width="100" class="img-responsive img-rounded" style="object-fit: fill">
+                <img src="{{ url_for('static', filename='html.jpeg') }}" id="html" width="100" class="img-responsive img-rounded" style="object-fit: fill">
             </div>
             <div class="flip-box-back">
                 <h2>HTML</h2>
@@ -54,16 +54,16 @@
 
 
     <div container id="review">
-        <img src="review.jpeg" width="550" height="350" class="img-responsive img-rounded">
-        <a href=login.html><button class="button button1" onclick="move_forward()">Login or Signup</button></a>
-        <a href=eir.html><button class="button button2" onclick="move_info()">About E.I.R. </button></a>
+        <img src="{{ url_for('static', filename='review.jpeg') }}" width="550" height="350" class="img-responsive img-rounded">
+        <a href={{url_for('login')}}><button class="button button1" onclick="move_forward()">Login/Signup</button></a>
+        <a href={{url_for('eir')}}><button class="button button2" onclick="move_info()">About E.I.R. </button></a>
     </div>
 
 
     <div class="flip-box " id="postgres">
         <div class="flip-box-inner">
             <div class="flip-box-front">
-                <img src="postgres.jpeg" id="postgres" width="100" class="img-responsive img-rounded">
+                <img src="{{ url_for('static', filename='postgres.jpeg') }}" id="postgres" width="100" class="img-responsive img-rounded">
             </div>
             <div class="flip-box-back">
                 <h2>postgres</h2>
@@ -75,7 +75,7 @@
     <div class="flip-box" id="heroku">
         <div class="flip-box-inner">
             <div class="flip-box-front">
-                <img src="heroku.jpeg" al id="heroku" width="100" class="img-responsive img-rounded">
+                <img src="{{ url_for('static', filename='heroku.jpeg') }}" al id="heroku" width="100" class="img-responsive img-rounded">
             </div>
             <div class="flip-box-back">
                 <h2>Heroku</h2>
@@ -91,7 +91,7 @@
     <div class="flip-box" id="flask">
         <div class="flip-box-inner">
             <div class="flip-box-front">
-                <img src="flask.jpeg" id="flask" width="100" class="img-responsive img-rounded">
+                <img src="{{ url_for('static', filename='flask.jpeg') }}" id="flask" width="100" class="img-responsive img-rounded">
             </div>
             <div class="flip-box-back">
                 <h2>Flask</h2>
