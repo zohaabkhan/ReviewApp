@@ -14,7 +14,7 @@ Creating our Web app "The Review"
 
 ## Our Web APP
 
-We want to create an web app that enchances the learning ability for CSC 4350 Class: Software Engineering. Our app would be based upon data base with user accounts and ability to full acesss for your suceess. Upon entry to yoour account, you will be able to look at videos from Professor John lecture gaining more knowledge to his lesson. There be select videos that will help be sucessful in the class. There will also be acessible tab to quiz that will alow user to test there knowledge on speciffic tops in the videos building your more confidence in the class. The people we would target is students in the class, but also past or future who would like to gain on refresh there knowledge on software engineer class.
+We want to create an web app that enchances the learning ability for CSC 4350 Class: Software Engineering. Our app would be based upon database with user accounts and ability to full acesss for your suceess. Upon entry to yoour account, you will be able to look at videos from Professor John lecture gaining more knowledge to his lesson. There be select videos that will help be sucessful in the class. There will also be acessible tab to quiz that will alow user to test there knowledge on speciffic tops in the videos building your more confidence in the class. The people we would target is students in the class, but also past or future who would like to gain on refresh there knowledge on software engineer class.
 ## Rubric
 
 [![Screen-Shot-2022-04-20-at-11-05-24-PM.png](https://i.postimg.cc/1XhHSzQc/Screen-Shot-2022-04-20-at-11-05-24-PM.png)](https://postimg.cc/BLpDc4tX)
