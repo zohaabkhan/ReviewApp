@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+    <body>
+
+        <form name="Quiz" method="POST" action="/results" autocomplete="off">
+            <fieldset><legend>QUIZ{{lect}} </legend>
+
+                
+                <p><input type="text" id="num1" name="num1" maxlength="1" size="1"/> {{q1}}</p><br>
+                
+                <p><input type="text" id="num2" name="num2" maxlength="1" size="1"/> {{q2}} </p><br>
+               
+                <p><input type="text" id="num3" name="num3" maxlength="1" size="1"/> {{q3}}</p><br>
+                
+                <p><input type="text" id="num4" name="num4" maxlength="1" size="1"/> {{q4}} </p><br>
+                
+            <textarea
+            rows="5"
+            cols="60">
+- type the correct letter in each box -
+a) {{a}}
+b) {{b}}
+c) {{c}}
+d) {{d}}
+</textarea>
+<p><input type="submit" name= "answers" value="Submit Quiz" /></p>
+
+</fieldset>
+
+</form>
+    </body>
+
+</html>

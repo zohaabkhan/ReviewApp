@@ -19,6 +19,8 @@ import flask
 from flask_login import login_user, current_user, LoginManager, logout_user
 from flask_login.utils import login_required
 from models import User
+from quizzes import QUIZ1,QUIZ2,QUIZ3
+
 
 
 login_manager = LoginManager()
@@ -120,7 +122,7 @@ def logout():
 @login_required
 def index():
     """
-    doc string: render index page
+    doc string: render menu page
     """
     return flask.render_template(
         "index.html",
@@ -146,6 +148,104 @@ def eir():
     function to handle user EIR
     """
     return flask.render_template("eir.html")
+
+
+
+@app.route("/quiz", methods=["GET","POST"]) #this page is the root endpoint
+def quiz3():
+    """
+    this function controls Quiz#3
+    """
+    quiz3 = { 
+        # list containing quiz questions and their answers
+        "lecture": " 3: Python, Debugging",
+        "question_1": "1. True or False: When you search for a video on Youtube, you are sending a request from the client to the server. The client is asking the Youtube server to get all the videos about a search topic. The server, then runs some processes on the search topic and returns all the data it found to the client.",
+        "answer_1": "True",
+        "question_2": "2. True or False: The frontend and the server tend to run together & the backend and the client tend to run together.",
+        "answer_2": "False",
+        "question_3": "3. True or False: The front end is NOT: JavaScript, HTML, CSS.",
+        "answer_3": "False",
+        "question_4": "4. True or False: Python controls all of its flow through indentation.",
+        "answer_4": "True"}
+      
+    
+    temp=quiz3
+    lect = temp.get("lecture")
+    q1 = temp.get("question_1")
+    q2 = temp.get("question_2")
+    q3 = temp.get("question_3")
+    q4 = temp.get("question_4")
+
+    a = temp.get("answer_1")
+    b = temp.get("answer_2")
+    c = temp.get("answer_3")
+    d = temp.get("answer_4")
+
+    return flask.render_template("quiz.html",lect=lect,q1=q1,q2=q2,q3=q3,q4=q4,a=a,b=b,c=c,d=d)    
+
+   
+
+
+@app.route("/results", methods=["GET","POST"]) #this page is the root endpoint
+def results():
+    """
+    this function calculates quiz score and renders a quiz feedback message
+    """
+
+    if flask.request.method =="POST":
+        data1 = flask.request.form.get("num1") #tells what to do with the form data
+        data2 = flask.request.form.get("num2") #retrieves the user's answer for question#2
+        data3 = flask.request.form.get("num3") #retrieves the user's answer for question#3
+        data4 = flask.request.form.get("num4") #retrieves the user's answer for question#4
+
+
+        feedback1=data1 #assign the retrieved form data to a variable
+        feedback2=data2
+        feedback3=data3
+        feedback4=data4
+    
+        miss2=0
+        miss3=0
+        miss4=0
+
+        if(feedback1=="a"): #checks if the user entered the correct answer for question#1
+            point1=25       #if the answer is correct; the user earns 25 points for question#1
+            miss1=0         #the user did not miss this question
+        else:
+            point1=0         #the answer was incorrect; the user does not earn points for question#1
+            miss1=1          #the user has missed one question
+        if(feedback2=="b"): #checks if the user entered the correct answer for question#2
+            point2=25       #if the answer is correct; the user earns 25 points for question#2
+            miss2=0         
+        else:
+            point2=0         #the answer was incorrect; the user does not earn points for question#2
+            miss2=1
+        if(feedback3=="c"): #checks if the user entered the correct answer for question#3
+            point3=25       #the answer is correct; the user earns 25 points for question#3
+            miss3=0         #the user did not miss this question
+        else:
+            point3=0         #the answer was incorrect; the user does not earn points for question#3
+            miss3=1
+        if(feedback4=="d"): #checks if the user entered the correct answer for question#4
+            point4=25       #if the answer is correct; the user earns 25 points for question#4
+            miss4=0         #the user did not miss this question
+        else:
+            point4=0        #the answer was incorrect; the user does not earn points for question4
+            miss4=1         #the user missed this question
+
+        score = point1+point2+point3+point4     #the sum of the points earned is the score
+        missed = miss1+miss2+miss3+miss4        #the sum of the number ofmissed questions
+
+        if(score==100):                         #logic to display a perfect score quiz feedback
+            return flask.render_template("feedback_greatjob.html")
+        else:                                   #logic to display quiz feedback results that are less than 100% score 
+            return flask.render_template("feedback_improve.html",score=score,missed=missed)      
+
+ 
+    return flask.render_template("feedback_improve.html",feedback1=feedback1,feedback2=feedback2,feedback3=feedback3)   
+    
+
+
 
 if __name__ == "__main__":
     app.run(
