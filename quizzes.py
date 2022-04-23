@@ -35,3 +35,26 @@ QUIZ3 = {
     "answer_3": "False",
     "question_4": "4. True or False: Python controls all of its flow through indentation.",
     "answer_4": "True"}    
+
+x=[]
+def quiz_setup(x):
+    """
+    function that controls quiz setup
+    """
+
+    temp = x
+    
+    lect = temp.get("lecture")         #extract the lecture name from the list
+    q1 = temp.get("question_1")        #extract question#1 from the list
+    q2 = temp.get("question_2")        #extract question#2 from the list
+    q3 = temp.get("question_3")        #extract question#3 from the list
+    q4 = temp.get("question_4")        #extract question#4 from the list
+
+    a = temp.get("answer_1")            #extract the answer for question#1 from the list
+    b = temp.get("answer_2")            #extract the answer for question#2 from the list
+    c = temp.get("answer_3")
+    d = temp.get("answer_4")   
+
+    return lect,q1,q2,q3,q4,a,b,c,d
+
+
