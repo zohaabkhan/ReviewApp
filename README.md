@@ -81,7 +81,7 @@ Zohaab Primary focus was on mostly was Back-End Development. He created the skel
 
 organization
 
-unit test for login
+unit test for quiz score and mocking quiz
 
 Monica bright mind is the reason why we created for this project. Her idea to implement this us made perfect since and could benefit other future student taking CSC 4350. She created the videos page and implemented slideshow to insure useability ands accessibility. Taking on the quiz page seemed to be one of the difficult task of this app, but she took on the challeneg and create quiz with reaction to the score at then end of answer. Some descriptions pages she created were route to certain buttons in the menu tab with clickable routes to them.
 ## Isaiah Task
